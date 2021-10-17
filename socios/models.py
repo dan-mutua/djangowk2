@@ -10,5 +10,5 @@ class Post(models.Model):
   comment = models.TextField(blank=True)
 
   def __str__(self):
-    return self.name + " | " + self.author
+    return self.name + " | " + str(self.author)
 
