@@ -17,7 +17,7 @@ file = models.FileField(upload_to=user_directory_path)
 
 
 class Post(models.Model):
-  id = models.UUIDField(primary_key=True,default=uuid.uuid4, editable=False)
+  
   author = models.ForeignKey(User, on_delete=models.CASCADE)
   name = models.CharField(max_length=200)
   caption = models.CharField(max_length=200)
