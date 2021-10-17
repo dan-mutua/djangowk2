@@ -39,17 +39,17 @@ def __str__(self):
 		return str(self.id)  
 
 class Likes(models.Model):
-  	user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_like')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_like')
 	post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='post_like')
 
 	def user_liked_post(sender, instance, *args, **kwargs):
-		like = instance
-	 post = like.post
-	 sender = like.user
-	 notify = Notification(post=post, sender=sender, user=post.user, notification_type=1)
-	 notify.save()
+   like = instance
+	  post = like.post
+	  sender = like.user
+	  notify = Notification(post=post, sender=sender, user=post.user, notification_type=1)
+	  notify.save()
 
-	def user_unlike_post(sender, instance, *args, **kwargs):
+def user_unlike_post(sender, instance, *args, **kwargs):
 	   like = instance 
 	post = like.post
 	sender = like.user
