@@ -15,8 +15,11 @@ class Post(models.Model):
 
 
 
-def __str__(self):
-    return self.name + " | " + str(self.author)
+  def __str__(self):
+      return self.name + " | " + str(self.author)
+
+  def get_absolute_url(self):
+    return reverse('postdetail', args=(str(self.id)))    
     
   
 
