@@ -1,14 +1,15 @@
 
 
 
+{% block content%}
+  <p class="card-body">
+    {% for post in object_list %}
+      {{ post.author}}
+      <a href="{% url 'postdetail' post.pk%}">{{post.name}}</a>
+      {{ post.caption}}
+      {{ post.comment}}
+      likes:{{ post.likes}} - posted:{{post.posttime}}
 
-<p>
-  {% for post in object_list %}
-    {{ post.author}}
-    <a href="{% url 'postdetail' post.pk%}">{{post.name}}</a>
-    {{ post.caption}}
-    {{ post.comment}}
-    likes:{{ post.likes}} - posted:{{post.posttime}}
-
-  {% endfor %}
-</p>
+    {% endfor %}
+  </p>
+{% endblock %}

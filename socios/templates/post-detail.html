@@ -1,12 +1,13 @@
 
 
 
+{% block content %}
+  <div>
 
-<div>
-
-  {{ post.author}}
-  {{post.name}}
-  {{ post.caption}}
-  {{ post.comment}}
-  <i class="bi bi-heart"></i>likes:{{ post.likes}} - posted:{{post.posttime}} <a href="{% url 'home' %}">baack</a>
-</div>
+    {{ post.author}}
+    {{post.name}}
+    {{ post.caption}}
+    {{ post.comment}}
+    <i class="bi bi-heart"></i>likes:{{ post.likes}} - posted:{{post.posttime}} <a href="{% url 'home' %}">baack</a>
+  </div>
+{% endblock %}
