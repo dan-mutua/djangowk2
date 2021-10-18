@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView,DetailView,CreateView
 from .models import Post
+from .forms import PostF
 
 # Create your views here.
 class  Homev(ListView):
@@ -13,5 +14,6 @@ class PostD(DetailView):
 
 class AddP(CreateView):
   model = Post
+  form_class= PostF
   template_name='upload.html'
-  fields= '__all__'
+  # fields= '__all__'
