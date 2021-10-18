@@ -1,5 +1,14 @@
 
-{% for post in object_list %}
-{{ post.}}
 
-{% endfor %}
+
+
+<ul>
+  {% for post in object_list %}
+    <li>{{ post.author}}</li>
+    <li>{{post.name}}</li>
+    <li>{{ post.caption}}</li>
+    <li>{{ post.comment}}</li>
+    <li>likes:{{ post.likes}} - posted:{{post.posttime}}</li>
+
+  {% endfor %}
+</ul>
