@@ -4,6 +4,6 @@ from django.views.generic import ListView,DetailView
 from socios.models import Post
 
 # Create your views here.
-class  Home(ListView):
+class  Homev(ListView):
   model = Post
   template_name='home.html'
