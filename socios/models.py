@@ -5,11 +5,7 @@ from django.urls import reverse
 
 
 
-
-
-
 class Post(models.Model):
-  
   author = models.ForeignKey(User, on_delete=models.CASCADE)
   name = models.CharField(max_length=200)
   caption = models.CharField(max_length=200)
