@@ -2,13 +2,13 @@
 
 
 
-<ul>
+<p>
   {% for post in object_list %}
-    <li>{{ post.author}}</li>
-    <li>{{post.name}}</li>
-    <li>{{ post.caption}}</li>
-    <li>{{ post.comment}}</li>
-    <li>likes:{{ post.likes}} - posted:{{post.posttime}}</li>
+    {{ post.author}}
+    <a href="{% url 'postdetail' post.pk%}">{{post.name}}</a>
+    {{ post.caption}}
+    {{ post.comment}}
+    likes:{{ post.likes}} - posted:{{post.posttime}}
 
   {% endfor %}
-</ul>
+</p>

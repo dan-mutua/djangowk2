@@ -6,3 +6,7 @@ from .models import Post
 class  Homev(ListView):
   model = Post
   template_name='home.html'
+
+class PostD(DetailView):
+  model = Post
+  template_name='post-detail.html'  
