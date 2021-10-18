@@ -11,7 +11,7 @@ class Post(models.Model):
   caption = models.CharField(max_length=200)
   comment = models.TextField(blank=True)
   posttime=models.DateTimeField(auto_now_add=True)
-  likes = models.IntegerField(default=0)
+  likes = models.ManyToManyField(User, related_name='blogp',default=0)
 
 
 

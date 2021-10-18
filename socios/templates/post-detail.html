@@ -12,4 +12,8 @@
     {{ post.comment}}
     <i class="bi bi-heart"></i>likes:{{ post.likes}} - posted:{{post.posttime}} <a href="{% url 'home' %}">baack</a>
   </div>
+  <form action="{% url 'like_post' post.pk%}" method="POST">
+    {% csrf_token %}
+    <button type="submit",name="post_id",value="{{post.id}}"><i class="bi bi-heart">likes</i></button>
+  </form>
 {% endblock %}
