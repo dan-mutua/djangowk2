@@ -1,15 +1,19 @@
 {% extends 'base.html' %}
+{% block title%}
+Homepage
+{% endblock %}
 
 
 {% block content%}
-  <p class="card-body">
+  <p >
     {% for post in object_list %}
+    <div class="card-body">
       {{ post.author}}
-      <a href="{% url 'postdetail' post.pk%}">{{post.name}}</a>
-      {{ post.caption}}
-      {{ post.comment}}
+      <a href="{% url 'postdetail' post.pk%}">{{post.name}}</a><br>
+      {{ post.caption}}<br>
+      {{ post.comment}}<br>
       likes:{{ post.likes}} - posted:{{post.posttime}}
-
+    </div>
     {% endfor %}
   </p>
 {% endblock %}

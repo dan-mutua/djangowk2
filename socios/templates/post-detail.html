@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
-
+{% block title%}
+  {{post.name}}
+{% endblock %}
 
 {% block content %}
-  <div>
+  <div class="card-body">
 
     {{ post.author}}
     {{post.name}}
