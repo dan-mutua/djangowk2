@@ -6,9 +6,10 @@ upload
 
 {% block content%}
  <h3> upload your post</h3>
-<div class="form-group container">
+<div class="form-group container" enctype="multipart/form-data">
   <form method="POST">
     {% csrf_token %}
+
     {{form.as_p}}
     <button class="btn btn-info">upload</button>
 
