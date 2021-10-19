@@ -1,16 +1,16 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
+from cloudinary.models import CloudinaryField
 
 
 
 
 class Post(models.Model):
   author = models.ForeignKey(User, on_delete=models.CASCADE)
-  name = models.CharField(max_length=200)
-  imagep= models.ImageField(blank=True,null=True, upload_to="images/")
+ 
+  images =  CloudinaryField( 'image', null=True, )
   caption = models.CharField(max_length=200)
-  comment = models.TextField(blank=True)
   posttime=models.DateTimeField(auto_now_add=True)
   likes = models.ManyToManyField(User, related_name='blogp',default=0)
 
@@ -23,6 +23,17 @@ class Post(models.Model):
 
   def get_absolute_url(self):
     return reverse('postdetail', args=(str(self.id)))    
+
+
+
+class Comment(models.Model):
+  post =models.ForeignKe(Post, related_name="comments", on_delete=models.CASCADE)   
+  name = models.CharField(max_length=200) 
+  body = models.TextField()
+  date_added = models.DateTimeField(auto_now_add=True)
+
+  def  __str__(self):
+    return '%s - %s' % (self.post.title, self.name)
     
   
 

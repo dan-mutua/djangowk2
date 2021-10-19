@@ -3,7 +3,7 @@ from django.views.generic import ListView,DetailView,CreateView
 from .models import Post
 from .forms import PostF
 from django.http import HttpResponseRedirect
-from django.urls import reverse
+from django.urls import reverse,reverse_lazy
 
 # Create your views here.
 
@@ -22,6 +22,8 @@ class AddP(CreateView):
   model = Post
   form_class= PostF
   template_name='upload.html'
+
+  success_url= reverse_lazy('home')
   # fields= '__all__'
 
 def LikeView(request,pk):

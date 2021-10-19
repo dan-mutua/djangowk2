@@ -6,11 +6,10 @@ from .models import Post
 class  PostF(forms.ModelForm):
   class Meta:
     model = Post
-    fields = ('author','name','imagep','caption','comment')
+    fields = ('author','images','caption')
 
     widgets={
-      'author':forms.TextInput(attrs={'class':'form-control'}),
-      'name':forms.TextInput(attrs={'class':'form-control'}),
+      
       'caption':forms.TextInput(attrs={'class':'form-control'}),
-      'comment':forms.TextInput(attrs={'class':'form-control'}),
+      
     }

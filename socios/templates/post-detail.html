@@ -6,10 +6,9 @@
 {% block content %}
   <div class="card-body">
 
-    {{ post.author}}
-    {{post.name}}
+   
     {{ post.caption}}
-    {{ post.comment}}
+   
     <i class="bi bi-heart"></i>likes:{{ post.likes}} - posted:{{post.posttime}} <a href="{% url 'home' %}">baack</a>
   </div>
   <form action="{% url 'like_post' post.pk%}" method="POST">
