@@ -23,7 +23,7 @@ Homepage
      No comments yet <a href="#">add one</a>
 
     {% else %} 
-        {% for comment in comments in post.comments.all %}
+        {% for comment in comments %}
         <strong>{{comment.name}} - {{ comment.date_added}}</strong>
         {{ comment.body }}
         {% endfor %}
