@@ -31,12 +31,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # setup cloudinary credentials for django-cloudinary
 cloudinary.config(
-    cloud_name=config('CLOUDINARY_CLOUD_NAME'),
-    api_key=config('CLOUDINARY_API_KEY'),
-    api_secret=config('CLOUDINARY_API_SECRET'),
-    secure=True
+    cloud_name= "del5fhw4z",
+    api_key= "697187336329268",
+    api_secret="5yEN1UHyrmGq1hsKuI_t5YHyRiQ"
 )
-
 # SECURITY WARNING: don't run with debug turned on in production!
 MODE=config("MODE", default="dev")
 SECRET_KEY = config('SECRET_KEY')
